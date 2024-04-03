@@ -33,7 +33,7 @@ spec:
         - name: {{ .Chart.Name }}
           env:
           - name: VOTING_API_SERVICE_HOST
-            value: vote-api
+            value: vote-api-${{values.user}}
           - name: VOTING_API_SERVICE_PORT
             value: "9000"
           securityContext:

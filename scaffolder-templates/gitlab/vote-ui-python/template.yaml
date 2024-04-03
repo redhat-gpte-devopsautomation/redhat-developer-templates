@@ -63,11 +63,11 @@ spec:
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
-          namespace: ${{ parameters.component_id }}-${{ user.entity.metadata.name }}-dev
+          namespace: ${{ parameters.component_id }}-dev
           owner: ${{ user.entity.metadata.name }}
           cluster: ${{ parameters.cluster_id }}
           host: gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com
-          destination: ${{ user.entity.metadata.name }}/${{ parameters.component_id }}-${{ user.entity.metadata.name }}
+          destination: ${{ user.entity.metadata.name }}/${{ parameters.component_id }}
           quay_destination: ${{ parameters.image_organization}}/${{ parameters.component_id }}
           port: 8080
           user: ${{ user.entity.metadata.name }}
@@ -76,7 +76,7 @@ spec:
       name: Publish
       action: publish:gitlab
       input:
-        repoUrl: "gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com?owner=${{ user.entity.metadata.name }}&repo=${{parameters.component_id}}-${{ user.entity.metadata.name }}"
+        repoUrl: "gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com?owner=${{ user.entity.metadata.name }}&repo=${{parameters.component_id}}"
         repoVisibility: public
 
     - id: register
@@ -95,9 +95,9 @@ spec:
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
-          destination: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}-${{ user.entity.metadata.name }}-gitops.git
-          source_repository: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}-${{ user.entity.metadata.name }}.git
-          repository_name: ${{parameters.component_id}}-${{ user.entity.metadata.name }}
+          destination: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}-gitops.git
+          source_repository: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}.git
+          repository_name: ${{parameters.component_id}}
           git_owner: ${{ user.entity.metadata.name }}
           cluster: ${{ parameters.cluster_id }}
           namespace: ${{ parameters.component_id }}-dev
@@ -108,7 +108,7 @@ spec:
           image_tag: ${{ parameters.image_tag }}
           port: 8080
           repository_host: gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com
-          deployment_name: vote-ui
+          deployment_name: ${{ parameters.component_id }}
           user: ${{ user.entity.metadata.name }}
         targetPath: ./tenant-gitops
 
@@ -116,7 +116,7 @@ spec:
       name: Publishing to Resource Repository
       action: publish:gitlab
       input:
-        repoUrl: "gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com?owner=${{ user.entity.metadata.name }}&repo=${{parameters.component_id}}-${{ user.entity.metadata.name }}-gitops"
+        repoUrl: "gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com?owner=${{ user.entity.metadata.name }}&repo=${{parameters.component_id}}-gitops"
         title: gitops resources for ${{ parameters.component_id }}
         description: gitops resources for ${{ parameters.component_id }}
         sourcePath: ./tenant-gitops
@@ -126,10 +126,10 @@ spec:
       name: Create ArgoCD Resources
       action: argocd:create-resources
       input:
-        appName: ${{ parameters.component_id }}-${{ user.entity.metadata.name }}-bootstrap
+        appName: ${{ parameters.component_id }}-bootstrap
         argoInstance: main
         namespace: janus-argocd
-        repoUrl: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{ parameters.component_id }}-${{ user.entity.metadata.name }}-gitops.git
+        repoUrl: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{ parameters.component_id }}-gitops.git
         path: 'argocd/'
 
   output:
