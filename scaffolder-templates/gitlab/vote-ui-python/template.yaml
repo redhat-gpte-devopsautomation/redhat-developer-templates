@@ -35,7 +35,7 @@ spec:
           title: Cluster Id
           type: string
           description: Id of the cluster
-          default: .apps.cluster-7nvm5.sandbox548.opentlc.com
+          default: .apps.cluster-x49dg.sandbox1352.opentlc.com
     - title: Provide Image Registry Information
       required:
         - image_host
@@ -66,7 +66,7 @@ spec:
           namespace: ${{ parameters.component_id }}-dev
           owner: ${{ user.entity.metadata.name }}
           cluster: ${{ parameters.cluster_id }}
-          host: gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com
+          host: gitlab-gitlab.apps.cluster-x49dg.sandbox1352.opentlc.com
           destination: ${{ user.entity.metadata.name }}/${{ parameters.component_id }}
           quay_destination: ${{ parameters.image_organization}}/${{ parameters.component_id }}
           port: 8080
@@ -95,8 +95,8 @@ spec:
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
-          destination: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}-gitops.git
-          source_repository: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}.git
+          destination: https://gitlab-gitlab.apps.cluster-x49dg.sandbox1352.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}-gitops.git
+          source_repository: https://gitlab-gitlab.apps.cluster-x49dg.sandbox1352.opentlc.com/${{ user.entity.metadata.name }}/${{parameters.component_id}}.git
           repository_name: ${{parameters.component_id}}
           git_owner: ${{ user.entity.metadata.name }}
           cluster: ${{ parameters.cluster_id }}
@@ -129,7 +129,7 @@ spec:
         appName: ${{ parameters.component_id }}-bootstrap
         argoInstance: main
         namespace: janus-argocd
-        repoUrl: https://gitlab-gitlab.apps.cluster-7nvm5.sandbox548.opentlc.com/${{ user.entity.metadata.name }}/${{ parameters.component_id }}-gitops.git
+        repoUrl: https://gitlab-gitlab.apps.cluster-x49dg.sandbox1352.opentlc.com/${{ user.entity.metadata.name }}/${{ parameters.component_id }}-gitops.git
         path: 'argocd/'
 
   output:
