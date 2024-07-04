@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Backstage Workshop :: Backstage Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/index.html">
+    <link rel="next" href="01-setup.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/backstage-workshop">Backstage Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="backstage-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Backstage Pass: Accessing Backstage</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#prerequisites">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#cluster_access">Accessing OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#project_access">OpenShift Project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#backstage_access">Accessing Backstage</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-templates.html">2. Templates</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#templates">Software Templates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#frontend">Launch the Front End Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#github">Front End Component Repo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#gateway">Launch the Gateway Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#pipelines">Tekton Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-components.html">3. Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#software_catalog">Software Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_frontend">View the Frontend Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#plugins">Backstage Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_gateway">View the Gateway Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#deploy_backend">Launch the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_backend">View the Backend Component</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-development.html">4. Development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#gateway_feature">Code a new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#dev_spaces">OpenShift Dev Spaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#extend_gateway">Extend the Gateway API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#validate_changes">Use your new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#next_steps">Paving your own Golden Path</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link is-current"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Backstage Workshop</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-gpte-devopsautomation/wind-turbine-templates/edit/master/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Backstage Workshop</h1>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>An Internal Developer Platform (IDP)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every team and every project evolves a tailored development environment. This collection of tools, services and configuration is often maintained by convention and transmitted by osmosis.</p>
+</div>
+<div class="paragraph">
+<p>IDPs help teams curate, manage and replicate these environments. <em>Backstage</em> is an open source CNCF project for building developer platforms, and for encapsulating tools, services, documentation and best practices in “golden paths” to ease onboarding and daily development. <em>Janus</em> is Red Hat&#8217;s project for contributing to the Backstage core and the ecosystem around it. The IDP presented in this workshop is referred to by both names: fundamental Backstage features are described as such, while you&#8217;ll work with a running Janus instance labeled with that name.</p>
+</div>
+<div class="paragraph">
+<p>In this end-to-end developer experience, you’ll start on a golden path we’ve paved to show how Red Hat products center on the OpenShift Container Platform to supply a foundation for cloud-native development.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/platform_diagram.png" alt="IDP diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Backstage will support you from the start with signposts to components in a single place connecting the three key developer views: an IDE to code, pipelines to build, and orchestration to deploy your application.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workshop_brief"><a class="anchor" href="#_workshop_brief"></a>Workshop brief</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In these exercises you will use Backstage <em>Templates</em> to deploy the <strong>Points of Interest (POI) Map</strong> application. The POI Map shows location points on a world map that zooms and scrolls. Clicking on a location marker reveals its details.</p>
+</div>
+<div class="paragraph">
+<p>POI Map defines a location to have a latitdue, longitude, name, and an optional description. It can display arbitrary locations. In this workshop, you&#8217;ll attach a data source containing hundreds of national parks around the world.</p>
+</div>
+<div class="paragraph">
+<p>POI Map is divided into three application tiers:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/poi-map.png" alt="POI Map Architecture diagram">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The user interface <strong>Frontend</strong></p>
+</li>
+<li>
+<p>The data-bridging <strong>Gateway</strong></p>
+</li>
+<li>
+<p>The data storage <strong>Backend</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the <a href="01-setup.html" class="xref page">first section</a>, you&#8217;ll sign in to OpenShift and to Backstage with your GitHub ID. Notice that your GitHub ID is your user name in both OpenShift and Backstage, and that your application components are deployed to an OpenShift <em>Project</em> with the same name. Both your user name and your Project name will match the GitHub ID you use to authenticate.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="02-templates.html" class="xref page">section 2</a>, you&#8217;ll use two provided Templates to build and deploy the graphical map interface frontend and the API gateway that supports it.</p>
+</div>
+<div class="paragraph">
+<p>While those two components establish the absolute minimum viable product of a global, dynamic map diplaying arbitrary locations, you&#8217;ll soon want a more interesting and robust data source for points on the map.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="03-components.html" class="xref page">section 3</a>, you&#8217;ll use Backstage&#8217;s tools for exploring application <em>Components</em> and their connections to examine the deployed frontend and gateway to understand their places in the application architecture. The gateway provides a map location API used by the frontend. It also expects to consume a more database-centric backend API.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll use another template to create and deploy that backend component. You&#8217;ll then have a map application displaying many location points around the world. Backstage lets Platform Engineers devise <em>Golden Paths</em> like this one that encapsulate the pieces of the applications a team might work on and guides developers in their quick deployment.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="04-development.html" class="xref page">section 4</a>, you&#8217;ll extend your map app with a lower-level feature. Backstage links you from app components to the OpenShift Dev Spaces web IDE, where you can edit the gateway&#8217;s source code. Then you&#8217;ll see how Backstage helps you or your teammates discover, navigate and test your modified gateway API.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="next"><a href="01-setup.html">1. Backstage Pass: Accessing Backstage</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

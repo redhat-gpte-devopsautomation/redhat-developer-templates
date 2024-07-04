@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Components :: Backstage Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/03-components.html">
+    <link rel="prev" href="02-templates.html">
+    <link rel="next" href="04-development.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/backstage-workshop">Backstage Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="backstage-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Backstage Pass: Accessing Backstage</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#prerequisites">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#cluster_access">Accessing OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#project_access">OpenShift Project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#backstage_access">Accessing Backstage</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-templates.html">2. Templates</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#templates">Software Templates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#frontend">Launch the Front End Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#github">Front End Component Repo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#gateway">Launch the Gateway Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#pipelines">Tekton Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-components.html">3. Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#software_catalog">Software Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#component_frontend">View the Frontend Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#plugins">Backstage Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#component_gateway">View the Gateway Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#deploy_backend">Launch the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#component_backend">View the Backend Component</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-development.html">4. Development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#gateway_feature">Code a new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#dev_spaces">OpenShift Dev Spaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#extend_gateway">Extend the Gateway API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#validate_changes">Use your new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#next_steps">Paving your own Golden Path</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Backstage Workshop</a></li>
+    <li><a href="03-components.html">3. Components</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-gpte-devopsautomation/wind-turbine-templates/edit/master/documentation/modules/ROOT/pages/03-components.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Components</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this chapter, we will use Backstage to view and manage the components that make up our application. We will also use Backstage to create a new component and API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="software_catalog"><a class="anchor" href="#software_catalog"></a>Software Catalog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Return to backstage to check the status of the frontend and gateway entities in the Catalog. Enter your NAMESPACE into the search box to filter the results.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/catalog_search.png" alt="catalog search">
+</div>
+</div>
+<div class="paragraph">
+<p>Select your Frontend component entity from the list of results</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/catalog_results.png" alt="catalog results">
+</div>
+</div>
+<div class="paragraph">
+<p>You will be prompted for authentication by the github plugin on your first visit. Click "LOG IN". While you have already logged in to OpenShift and to Backstage, opening a Catalog Entity&#8217;s detail screen for the first time requires authentication for the GitHub Plugin, an optional Backstage component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/login_3.png" alt="login 3">
+</div>
+</div>
+<div class="paragraph">
+<p>Backstage would like to access your GitHub profile information and repositories. Click "Authorize" to continue.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/auth_3.png" alt="auth 3">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="component_frontend"><a class="anchor" href="#component_frontend"></a>View the Frontend Component</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Take your time exploring the Component Overview page and each of the tabs.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_overview.png" alt="frontend overview">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the <em>DEPENDENCIES</em> tab to inspect the component relationship graph. Note that you can scroll the tabs on the Entity details screen to the left and right. You may need to scroll to find the <em>DEPENDENCIES</em>, <em>API</em> and other tabs highlighted in this workshop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_relations.png" alt="frontend relations">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="plugins"><a class="anchor" href="#plugins"></a>About Plugins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The KUBERNETES tab will show information from the Kubernetes plugin:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_k8s.png" alt="frontend k8s">
+</div>
+</div>
+<div class="paragraph">
+<p>The TOPOLOGY tab will show information from the OpenShift Topology plugin:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_topology.png" alt="frontend topology">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="component_gateway"><a class="anchor" href="#component_gateway"></a>View the Gateway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Return to the Backstage Software Catalog to check the status of the gateway entity. Enter your NAMESPACE into the search box to filter the results.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/catalog_search.png" alt="catalog search">
+</div>
+</div>
+<div class="paragraph">
+<p>Select your Gateway component entity from the list of results</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/catalog_results_1.png" alt="catalog results 1">
+</div>
+</div>
+<div class="paragraph">
+<p>Take your time exploring the Component Overview page and each of the tabs</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_overview.png" alt="gateway overview">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the API tab to explore the API that is provided by this software component. Select the available API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_apis.png" alt="gateway apis">
+</div>
+</div>
+<div class="paragraph">
+<p>From the API overview page, select "DEFINITION" to see the Relationship graph:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_api_overview.png" alt="gateway api overview">
+</div>
+</div>
+<div class="paragraph">
+<p>Use OpenAPI to explore exposed endpoints:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_api_definition.png" alt="gateway api definition">
+</div>
+</div>
+<div class="paragraph">
+<p>The gateway&#8217;s /backend endpoint collection can be used to link a new Backend component and API. We will do this in the next section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploy_backend"><a class="anchor" href="#deploy_backend"></a>Create from the Backend Template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Return to the <code>Create&#8230;&#8203;</code> menu to Choose the Backend Template, <em>Quarkus Backend Application for Points-of-Interest Map</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_create_backend.png" alt="backstage create backend">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_1b.png" alt="backend 1b">
+</div>
+</div>
+<div class="paragraph">
+<p>Insert your NAMESPACE and USERNAME as directed in the following example:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_2b.png" alt="frontend 2b">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_3b.png" alt="frontend 3b">
+</div>
+</div>
+<div class="paragraph">
+<p>Review and create your backend component:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/frontend_4b.png" alt="frontend 4b">
+</div>
+</div>
+<div class="paragraph">
+<p>Open the new Backend component using the Software Catalog:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_5.png" alt="backend 5">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="component_backend"><a class="anchor" href="#component_backend"></a>View the resulting Components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>View the resulting component and plugins.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_overview.png" alt="backend overview">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the DEPENDENCIES tab to view the component relationship graph:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_dependencies.png" alt="backend dependencies">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the API tab to browse the provided APIs:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_api.png" alt="backend api">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the CI tab to check the resulting pipelines for activity:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_ci.png" alt="backend ci">
+</div>
+</div>
+<div class="paragraph">
+<p>View Tekton Pipelines using the Tekton tab:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backend_tekton.png" alt="backend tekton">
+</div>
+</div>
+<div class="paragraph">
+<p>When the pipeline build has completed successfully, reload the map to check for results!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/map_3.png" alt="map 3">
+</div>
+</div>
+<div class="paragraph">
+<p>Congratulations on completing Chapter 3!</p>
+</div>
+<div class="paragraph">
+<p>In the next chapter, we will complete our Golden Path by using OpenShift Dev Spaces to make a simple code contribution.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="02-templates.html">2. Templates</a></span>
+  <span class="next"><a href="04-development.html">4. Development</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

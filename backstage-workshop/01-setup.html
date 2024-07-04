@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started with Backstage :: Backstage Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/01-setup.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="02-templates.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/backstage-workshop">Backstage Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="backstage-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Backstage Pass: Accessing Backstage</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#prerequisites">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#cluster_access">Accessing OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#project_access">OpenShift Project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#backstage_access">Accessing Backstage</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-templates.html">2. Templates</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#templates">Software Templates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#frontend">Launch the Front End Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#github">Front End Component Repo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#gateway">Launch the Gateway Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#pipelines">Tekton Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-components.html">3. Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#software_catalog">Software Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_frontend">View the Frontend Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#plugins">Backstage Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_gateway">View the Gateway Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#deploy_backend">Launch the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_backend">View the Backend Component</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-development.html">4. Development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#gateway_feature">Code a new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#dev_spaces">OpenShift Dev Spaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#extend_gateway">Extend the Gateway API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#validate_changes">Use your new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-development.html#next_steps">Paving your own Golden Path</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Backstage Workshop</a></li>
+    <li><a href="01-setup.html">1. Backstage Pass: Accessing Backstage</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-gpte-devopsautomation/wind-turbine-templates/edit/master/documentation/modules/ROOT/pages/01-setup.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Getting Started with Backstage</h1>
+<div class="sect1">
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need a GitHub account for this workshop to authenticate with the provided infrastructure and to store your source code. The account is free of charge and it takes about five minutes to register. If you do not have a GitHub account, or would like to use a dedicated account for this workshop, please create one now at <a href="https://github.com" class="bare">https://github.com</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter your github username in column A of the <a href="https://docs.google.com/spreadsheets/d/1wgyZ719TrwNv-3rHPBQpDLgkRqVA_jZpihLxUaqpJe8/edit">onboarding spreadsheet</a> and let an instructor know. We will add you to the GitHub Org for today&#8217;s workshop. You must receive <strong>and accept</strong> an invitation to our GitHub Org before continuing.</p>
+</div>
+<div class="sect2">
+<h3 id="_wheres_my_invite"><a class="anchor" href="#_wheres_my_invite"></a>Where&#8217;s my invite?</h3>
+<div class="paragraph">
+<p>Hate waiting and searching for email?  After your invite has been generated, we will add a link to your invite in Column B of the <a href="https://docs.google.com/spreadsheets/d/1wgyZ719TrwNv-3rHPBQpDLgkRqVA_jZpihLxUaqpJe8/edit">onboarding spreadsheet</a>. You must accept this invite to join the Org.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cluster_access"><a class="anchor" href="#cluster_access"></a>Accessing OpenShift</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Check the <a href="https://docs.google.com/spreadsheets/d/1wgyZ719TrwNv-3rHPBQpDLgkRqVA_jZpihLxUaqpJe8/edit">onboarding sheet</a> for the latest cluster URL ✅.  After your invite has been sent, we will publish your cluster URL in Column C of the spreadsheet.</p>
+</div>
+<div class="paragraph">
+<p>Point a web browser to the OpenShift Web Console URL. Choose the <strong>Login with Github</strong> option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cluster_login.png" alt="cluster login">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cluster_auth.png" alt="cluster auth">
+</div>
+</div>
+<div class="sect2">
+<h3 id="project_access"><a class="anchor" href="#project_access"></a>OpenShift Project</h3>
+<div class="paragraph">
+<p>You will need to create an OpenShift <em>Project</em> for your exclusive use. Projects are a superset of the base Kubernetes <em>namespace</em>, and isolate resource names and access rights from other Projects on the cluster. Your OpenShift user and Project names should both match the GitHub ID you used to log in.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/project_create.png" alt="project create">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/project_list.png" alt="project list">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you do not find a project, try refreshing your browser to reload the Projects pulldown menu.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Remember your Project name! You will enter it into Template forms to replace the <strong>NAMESPACE</strong> placeholder as you deploy components in the next two chapters.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Next, you&#8217;ll connect to Backstage and discover the starting point for developing your application. Once that&#8217;s done, Backstage <em>Templates</em> will help you generate software components as you build a three-tier mapping application.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backstage_access"><a class="anchor" href="#backstage_access"></a>Logging in to Backstage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click on the waffle icon in the OpenShift Web Console header menu and select "Red Hat Developer Hub".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/console_backstage_link.png" alt="console backstage link">
+</div>
+</div>
+<div class="paragraph">
+<p>You will be prompted to authenticate. Use the GitHub login option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_login.png" alt="backstage login">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_auth.png" alt="backstage auth">
+</div>
+</div>
+<div class="paragraph">
+<p>You may be prompted to provide your First and Last name. If so, complete the form and then click "Submit"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_login_2.png" alt="backstage login 2">
+</div>
+</div>
+<div class="paragraph">
+<p>After successfully authenticating via GitHub, Backstage will greet you with a cheerful "Welcome to Red Hat Developer Hub!"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/backstage_welcome.png" alt="backstage welcome">
+</div>
+</div>
+<div class="paragraph">
+<p>Having established a Project on the OpenShift cluster and access to Backstage, you can start to build your app. First up: Instantiating Backstage <em>Templates</em> to populate the Backstage Catalog.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Backstage Workshop</a></span>
+  <span class="next"><a href="02-templates.html">2. Templates</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

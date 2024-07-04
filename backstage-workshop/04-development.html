@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Development :: Backstage Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/backstage-workshop/backstage-workshop/04-development.html">
+    <link rel="prev" href="03-components.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/backstage-workshop">Backstage Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="backstage-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Backstage Pass: Accessing Backstage</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#prerequisites">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#cluster_access">Accessing OpenShift</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#project_access">OpenShift Project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#backstage_access">Accessing Backstage</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-templates.html">2. Templates</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#templates">Software Templates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#frontend">Launch the Front End Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#github">Front End Component Repo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#gateway">Launch the Gateway Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#pipelines">Tekton Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-templates.html#view_map">Access the resulting Workloads</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-components.html">3. Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#software_catalog">Software Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_frontend">View the Frontend Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#plugins">Backstage Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_gateway">View the Gateway Component</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#deploy_backend">Launch the Backend Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="03-components.html#component_backend">View the Backend Component</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-development.html">4. Development</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#gateway_feature">Code a new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#dev_spaces">OpenShift Dev Spaces</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#extend_gateway">Extend the Gateway API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#validate_changes">Use your new feature</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#next_steps">Paving your own Golden Path</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Backstage Workshop</a></li>
+    <li><a href="04-development.html">4. Development</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-gpte-devopsautomation/wind-turbine-templates/edit/master/documentation/modules/ROOT/pages/04-development.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Development</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The last chapter in the Backstage Golden Path workshop uses OpenShift Dev Spaces to edit source code and add a feature to your application. Committing your changes to the Backstage-provisioned repo will in turn trigger the platform to automatically rebuild your enhanced component. You will then verify your change by connecting to a Pod in the Gateway Deployment and testing the new API endpoint.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gateway_feature"><a class="anchor" href="#gateway_feature"></a>Code a new feature</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this chapter you will add a custom location to the "Red Hat Summit POI" dataset maintained in memory in the Gateway component. To make it possible to add arbitrary locations, you need to add a new <code>loadCustomPoi</code> endpoint to the API provided by the Gateway. An HTTP <code>POST</code> to <code>loadCustomPoi</code> specifies coordinates and metadata to add a location to the map displayed by your application.</p>
+</div>
+<div class="sect2">
+<h3 id="dev_spaces"><a class="anchor" href="#dev_spaces"></a>OpenShift Dev Spaces</h3>
+<div class="paragraph">
+<p><a href="https://developers.redhat.com/products/openshift-dev-spaces/overview">OpenShift Dev Spaces</a> is an Integrated Development Environment (IDE) hosted on the lab&#8217;s OpenShift cluster and ready to run in your web browser. It&#8217;s based on the open source VSCode, so its features, interface, and large plugin ecosystem are already familiar to many developers. You&#8217;ll use Dev Spaces to edit code and push your changes to your application&#8217;s central repository.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="extend_gateway"><a class="anchor" href="#extend_gateway"></a>Extend the Gateway API</h3>
+<div class="paragraph">
+<p>Enter your NAMESPACE into the search input of the Software Catalog to find your Gateway entity. Or, you can select your user name, which also matches your Project/NAMESPACE name, from the <em>Owner</em> pulldown menu on the left.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/catalog_3.png" alt="catalog 3">
+</div>
+</div>
+<div class="paragraph">
+<p>From the Gateway Component Overview page, click on "OpenShift Dev Spaces (VS Code)" to launch a new browser tab running the Dev Spaces IDE.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/gateway_devspaces.png" alt="gateway devspaces">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on <em>Log in with OpenShift</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/login_4.png" alt="login 4">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the <em>GitHub</em> login option</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/login_5.png" alt="login 5">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on <em>Allow selected permissions</em> to grant Dev Spaces your access to OpenShift.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/auth_6.png" alt="auth 6">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Make sure to click on <strong><code>Grant</code></strong> next to the <strong>rhdh23-lab</strong> GitHub Org before approving Dev Spaces access (where <em>N</em> matches your cluster&#8217;s GitHub Org ID number).
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/auth_4.png" alt="auth 4">
+</div>
+</div>
+<div class="paragraph">
+<p>Wait for your Dev Spaces workspace to load. This can take a minute. You will see a loading screen while the workspace is being provisioned, where Dev Spaces is creating a workspace based on a default <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_dev_spaces/3.1/html/user_guide/introduction-to-devfile">devfile</a>, which can be customized to include your own tools and configuration.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/devspaces_loading.png" alt="devspaces loading">
+</div>
+</div>
+<div class="paragraph">
+<p>After Dev Spaces has loaded your workspace, select <em>Yes, I trust the authors</em> to open the code editor on your clone of your code repo for the Gateway component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/trust_the_authors.png" alt="trust the authors">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the file <code>/src/main/java/com/rhdevelopers/summit/workshop/SummitBackendResource.java</code> in the left-hand file tree. Delete the comment markers (<code>/&ast;</code> and <code>&ast;/</code>) on line 73 and line 82 to enable the block of code they surround:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/uncomment-editor.png" alt="uncomment editor">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_commit_your_change_and_sync"><a class="anchor" href="#_commit_your_change_and_sync"></a>Commit your change and sync</h3>
+<div class="paragraph">
+<p>Click on the Source Control tab in the left sidebar, then select the plus icon to add your change to the changeset.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/add_changes.png" alt="add changes">
+</div>
+</div>
+<div class="paragraph">
+<p>Enter your commit message in the top input box. Click "Commit" when done.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/commit.png" alt="commit">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on "Sync Changes" to publish your changes to GitHub</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/sync.png" alt="sync">
+</div>
+</div>
+<div class="paragraph">
+<p>Click "OK" to confirm and push</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/push.png" alt="push">
+</div>
+</div>
+<div class="paragraph">
+<p>Check the resulting pipelines for activity by selecting <strong>CI</strong> tab.  Then, click on "GO TO TEKTON" to view the Tekton tab:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tab_ci.png" alt="tab ci">
+</div>
+</div>
+<div class="paragraph">
+<p>Wait until the top pipeline run has reached completion. This will indicate that a new image has been built and is now available for deployment</p>
+</div>
+<div class="paragraph">
+<p>After the new pipeline run reports "Succeeded", click on the Right Nav button in the header tabs to reveal the "API" tab.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tab_tekton.png" alt="tab tekton">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the "API" tab to view the associated APIs offered by this component, then select the "Gateway" API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/tab_api.png" alt="tab api">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="validate_changes"><a class="anchor" href="#validate_changes"></a>Test your new feature</h3>
+<div class="paragraph">
+<p>To test the new API endpoint, we will use Swagger to interact with the OpenAPI spec.  Click on the "Swagger UI" link:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/swagger_link.png" alt="swagger link">
+</div>
+</div>
+<div class="paragraph">
+<p>Scroll down to the new "/fake/poi/add/point" API endpoint and expand the item:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/swagger_list.png" alt="swagger list">
+</div>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t see the new API endpoint, your second build may not be completed.  Double check your work from the previous section if needed.</p>
+</div>
+<div class="paragraph">
+<p>Click on "Try it out" to test the API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/swagger_try.png" alt="swagger try">
+</div>
+</div>
+<div class="paragraph">
+<p>Paste the following content into the Request body input, then click the "Execute" button to test the new endpoint:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name":"Milano, Italy",
+  "description":"example city",
+  "coordinates":[45.464203,9.189982]
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/swagger_exec.png" alt="swagger exec">
+</div>
+</div>
+<div class="paragraph">
+<p>A successful <code>POST</code> to your new API endpoint will return: <code>inserted custom data point</code></p>
+</div>
+<div class="paragraph">
+<p>Reload the map and hide the National Parks map layer to look for your new Point.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/map_point.png" alt="map point">
+</div>
+</div>
+<div class="paragraph">
+<p>If you see more than two points in the "Red Hat Summit POI" dataset, then you have successfully completed our Golden Path onboarding experience by pushing, building, deploying, and verifying your change.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next_steps"><a class="anchor" href="#next_steps"></a>Paving your own Golden Path</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have made it to the end of the National Parks Map application Golden Path. <em>Congratulations!</em></p>
+</div>
+<div class="paragraph">
+<p>Now it&#8217;s your turn to begin crafting your own Golden Paths using Backstage Software Templates and related platform services such as ArgoCD, Tekton, Dev Spaces, and OpenShift.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To learn about the Software Templates that were used in this workshop, visit: <a href="https://github.com/redhat-scholars/backstage-workshop" class="bare">https://github.com/redhat-scholars/backstage-workshop</a></p>
+</li>
+<li>
+<p>For more Backstage / Janus Software Templates examples, see: <a href="https://github.com/janus-idp/software-templates" class="bare">https://github.com/janus-idp/software-templates</a></p>
+</li>
+<li>
+<p>To share your feedback on this workshop, open an issue here: <a href="https://github.com/redhat-scholars/backstage-workshop/issues" class="bare">https://github.com/redhat-scholars/backstage-workshop/issues</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="03-components.html">3. Components</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
