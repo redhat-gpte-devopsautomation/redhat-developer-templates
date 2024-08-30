@@ -36,7 +36,7 @@ spec:
           title: Cluster Id
           type: string
           description: Id of the cluster
-          default: .apps.cluster-pp72k.sandbox1540.opentlc.com
+          default: {{ cluster_subdomain }}
         namespace:
           title: Namespace
           type: string
@@ -77,7 +77,7 @@ spec:
                   title: Image Host
                   type: string
                   description: Host for storing image
-                  default: quay-pp72k.apps.cluster-pp72k.sandbox1540.opentlc.com
+                  default: {{ quay_host }}
                 image_organization:
                   title: Organization
                   type: string
@@ -100,7 +100,7 @@ spec:
               title: Repo Host
               type: string
               description: Your SCM host
-              default: gitlab-gitlab.apps.cluster-pp72k.sandbox1540.opentlc.com
+              default: {{ gitlab_host }}
             owner:
               title: Repo Owner
               type: string
