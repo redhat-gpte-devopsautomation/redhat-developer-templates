@@ -33,7 +33,6 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-    - RespectIgnoreDifferences=true
     - ApplyOutOfSyncOnly=true
     retry:
       limit: -1
