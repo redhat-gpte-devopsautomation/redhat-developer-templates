@@ -18,6 +18,7 @@ spec:
     kind: Service
     name: {{ include "quarkus-template.fullname" $ }}
   tls:
-    termination: edge
+    termination: edge    
+    insecureEdgeTerminationPolicy: Redirect
   wildcardPolicy: None
 {{- end }}
